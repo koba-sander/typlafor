@@ -1,0 +1,8 @@
+npm startでサーバーが起動
+
+tsc app.ts -w　でルートにあるapp.tsのみ監視する
+
+npm run watchで自動で
+
+tsc -wでファイル変更の監視 全ファイルの監視になるので注意
+
