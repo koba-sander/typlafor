@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,49 +34,38 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-exports.__esModule = true;
-//時間を与える関数
+/**
+ * 時間を与える関数
+ * @param {number} timeout 1000(1秒)などの引数を渡す
+ * その分処理の時間を遅らせる。
+*/
 function wait(timeout) {
     return new Promise(function (resolve) { return setTimeout(resolve, timeout); });
 }
+/**
+ * fetchでデータを取って来る関数
+ * @param {String} url jsonの形式のURLを渡す
+ * @returns {String} dataを返す
+ *
+*/
+function getData(url) {
+    return __awaiter(this, void 0, void 0, function () {
+        var response, data;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, fetch(url)];
+                case 1:
+                    response = _a.sent();
+                    return [4 /*yield*/, response.json()];
+                case 2:
+                    data = _a.sent();
+                    return [2 /*return*/, data];
+            }
+        });
+    });
+}
 function TypeScriptStart() {
-    //この中に処理を書くこと------------------------------------------------------------------------------------------------------------------
-    function fetchUser(userId) {
-        return __awaiter(this, void 0, void 0, function () {
-            var response, user;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("https://jsonplaceholder.typicode.com/users/".concat(userId, "/todos"))];
-                    case 1:
-                        response = _a.sent();
-                        return [4 /*yield*/, response.json()];
-                    case 2:
-                        user = _a.sent();
-                        return [2 /*return*/, user];
-                }
-            });
-        });
-    }
-    function main() {
-        return __awaiter(this, void 0, void 0, function () {
-            var userId, user;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        console.log("START");
-                        return [4 /*yield*/, wait(3000)];
-                    case 1:
-                        _a.sent();
-                        userId = 1;
-                        return [4 /*yield*/, fetchUser(userId)];
-                    case 2:
-                        user = _a.sent();
-                        console.log(user);
-                        return [2 /*return*/];
-                }
-            });
-        });
-    }
-    main();
+    //この中に処理を書くこと******************************************************************************************************************************************************************
+    //**************************************************************************************************************************************************************************************
     //ここまでに処理を書くこと------------------------------------------------------------------------------------------------------------------
 }

@@ -1,44 +1,72 @@
-import common from "./common/common";
-
-//時間を与える関数
+/**
+ * 時間を与える関数
+ * @param {number} timeout 1000(1秒)などの引数を渡す
+ * その分処理の時間を遅らせる。
+*/
 function wait(timeout: number): Promise<void> {
     return new Promise<void>((resolve) => setTimeout(resolve, timeout));
 }
 
+/**
+ * fetchでデータを取って来る関数
+ * @param {String} url jsonの形式のURLを渡す
+ * @returns {String} dataを返す
+ *
+*/
+async function getData(url: string) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
+
+
 function TypeScriptStart(){
-//この中に処理を書くこと------------------------------------------------------------------------------------------------------------------
-
-interface User{
-    id: number;
-    name: string;
-    email: string;
-}
-
-interface Todo {
-    id: number;
-    title: string;
-    completed: boolean;
-}
-
-async function fetchUser(userId: number): Promise<User> {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/todos`);
-    const user = await response.json();
-    return user;
-}
+//この中に処理を書くこと******************************************************************************************************************************************************************
+//**************************************************************************************************************************************************************************************
 
 
 
 
 
-async function main(){
-    console.log("START");
-    await wait(3000);
-    const userId = 1;
-    const user = await fetchUser(userId);
-    console.log(user);
-}
 
-main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
