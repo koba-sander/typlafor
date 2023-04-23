@@ -9,15 +9,6 @@
     <script src="app.js" defer></script>
     <script type="text/javascript" src="delighters.js"></script>
 <body>
-    <input class="button1" type="button" value="TypeScriptを実行" onclick="TypeScriptStart();"/><br />
-
-	<button class="button2" onclick="pressF5()">F5キーを押す</button>
-	<script>
-		// F5キーを押す
-		function pressF5() {
-		  location.reload();
-		}
-	</script>
   <article>
     <section data-delighter class="splash">
        <h1 data-delighter class="right">ポートフォリオ</h1>
@@ -26,6 +17,8 @@
           2020年より営業からエンジニアに転職しました。
           現在は3年目です。
        </p>
+       <input data-delighter class="button1" type="button" value="TypeScriptを実行" onclick="TypeScriptStart();"/><br />
+       <button data-delighter class="button2" onclick="location.reload()">F5キーを押す</button>
     </section>
     <section data-delighter="start:0.3">
        <div class="box">Typescript(Javascript)</div>
@@ -96,7 +89,7 @@
           <li>Values outside the viewport are allowed, such as <code>start:1.2;end:-0.3</code></li>
        </ul>
     </section>
-    <section>
+    <!-- <section>
        <h2>Debugging</h2>
        <ul data-delighter="debug">
           <li>Set the <code>data-delighter="debug"</code> flag to enable debugging for that delighter</li>
@@ -105,7 +98,7 @@
           <li>The hint line is positioned at the defined start, which by default is <code>0.75</code></li>
           <li>The line is removed when the bottom of the delighter is above the end position, by default also <code>0.75</code></li>
        </ul>
-    </section>
+    </section> -->
     <section data-delighter>
       <h2 data-d="right">Customizing</h2>
       <p>
