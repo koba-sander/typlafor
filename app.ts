@@ -1,3 +1,6 @@
+// https://riotz.works/articles/lopburny/2019/08/28/using-typescript-re-export-and-import-syntax-to-improve-module-arrangement/
+
+
 /**
  * 時間を与える関数
  * @param {number} timeout 1000(1秒)などの引数を渡す
