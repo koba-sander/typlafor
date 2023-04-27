@@ -1,10 +1,8 @@
 .button1{
-    margin-top: 200px;
     font-size: xx-large;
 }
 
 .button2{
-    margin-top: 50px;
     font-size: xx-large;
 }
 
@@ -19,7 +17,7 @@ html, body {
   article {
     font-size: 2em;
     font-family: futura, sans-serif;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   @media (max-width: 460px) {
     article {

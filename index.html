@@ -11,14 +11,14 @@
 <body>
   <article>
     <section data-delighter class="splash">
-       <h1 data-delighter class="right">ポートフォリオ</h1>
-       <h2 data-delighter class="left">人生崖っぷち</h2>
-       <p data-delighter="start:1" class="bottom">
-          2020年より営業からエンジニアに転職しました。
-          現在は3年目です。
-       </p>
-       <input data-delighter class="button1" type="button" value="TypeScriptを実行" onclick="TypeScriptStart();"/><br />
-       <button data-delighter class="button2" onclick="location.reload()">F5キーを押す</button>
+      <h1 data-delighter class="right">ポートフォリオ</h1>
+      <h2 data-delighter class="left">人生崖っぷち</h2>
+      <p data-delighter="start:1" class="bottom">
+        2020年より営業からエンジニアに転職しました。
+        現在は3年目です。
+      </p>
+      <input data-delighter class="bottom button1" type="button" value="TypeScriptを実行" onclick="TypeScriptStart();"/>
+      <button data-delighter class="bottom button2" onclick="location.reload()">F5キーを押す</button>
     </section>
     <section data-delighter="start:0.3">
        <div class="box">Typescript(Javascript)</div>
@@ -88,43 +88,6 @@
           <li>Remember: 0 = top, 1 = bottom</li>
           <li>Values outside the viewport are allowed, such as <code>start:1.2;end:-0.3</code></li>
        </ul>
-    </section>
-    <!-- <section>
-       <h2>Debugging</h2>
-       <ul data-delighter="debug">
-          <li>Set the <code>data-delighter="debug"</code> flag to enable debugging for that delighter</li>
-          <li>This will give the delighter a red outline</li>
-          <li>Also, a dotted red hint line is shown when the delighter is within the viewport</li>
-          <li>The hint line is positioned at the defined start, which by default is <code>0.75</code></li>
-          <li>The line is removed when the bottom of the delighter is above the end position, by default also <code>0.75</code></li>
-       </ul>
-    </section> -->
-    <section data-delighter>
-      <h2 data-d="right">Customizing</h2>
-      <p>
-        By default, delighters.js intializes automatically when the DOM is ready, and with the following configuration:
-      </p>
-      <pre>
-options = {
-  attribute:  'data-delighter',
-  classNames: ['delighter', 'started', 'ended'],
-  start:      0.75, // default start threshold
-  end:        0.75, // default end threshold
-  autoInit:   true  // initialize when DOMContentLoaded
-}</pre>
-      <p>
-        You can customize any or all of the above properties using:
-      <pre>
-Delighters.config({
-  // set the default start threshold at the bottom
-  start: 1,
-  // let's call Delighters.init() manually later
-  autoInit: false
-  // ... etc ...
-})</pre>
-    </section>
-    <section>
-      <h1 data-delighter class="bottom">Enjoy!</h1>
     </section>
   </article>
 </body>
