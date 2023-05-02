@@ -1,3 +1,4 @@
+// https://riotz.works/articles/lopburny/2019/08/28/using-typescript-re-export-and-import-syntax-to-improve-module-arrangement/
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -67,5 +68,52 @@ function getData(url) {
 function TypeScriptStart() {
     //この中に処理を書くこと******************************************************************************************************************************************************************
     //**************************************************************************************************************************************************************************************
+    function fetchPosts() {
+        return __awaiter(this, void 0, void 0, function () {
+            var response, data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch("https://jsonplaceholder.typicode.com/posts")];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.json()];
+                    case 2:
+                        data = _a.sent();
+                        return [2 /*return*/, data];
+                }
+            });
+        });
+    }
+    function processPosts(posts) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                console.log("Received ".concat(posts.length, " posts"));
+                posts.forEach(function (post) {
+                    console.log("Post ".concat(post.id, ": ").concat(post.title));
+                });
+                return [2 /*return*/];
+            });
+        });
+    }
+    function main() {
+        return __awaiter(this, void 0, void 0, function () {
+            var posts;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.log("Start");
+                        return [4 /*yield*/, fetchPosts()];
+                    case 1:
+                        posts = _a.sent();
+                        return [4 /*yield*/, processPosts(posts)];
+                    case 2:
+                        _a.sent();
+                        console.log("End");
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
+    main();
     //ここまでに処理を書くこと------------------------------------------------------------------------------------------------------------------
 }
