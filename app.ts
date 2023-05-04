@@ -1,3 +1,4 @@
+
 // https://riotz.works/articles/lopburny/2019/08/28/using-typescript-re-export-and-import-syntax-to-improve-module-arrangement/
 
 
@@ -29,24 +30,34 @@ function TypeScriptStart(){
 //**************************************************************************************************************************************************************************************
 
 
+function when(value: number) {
+  return {
+    on(predicate: any, fn: any) {
+      if (predicate(value)) {
+        return {
+          on: this.on,
+          otherwise: () => fn(value),
+        };
+      }
+      return this;
+    },
+    otherwise(fn: any) {
+      return fn(value);
+    },
+  };
+}
 
+function switcher(hoge: number): void{
+  const result: string = when(hoge)
+  .on((v: number) => v === 1, (): string => "A")
+  .on((v: number) => v === 2, (): string => "B")
+  .on((v: number) => v === 3, (): string => "C")
+  .otherwise((): string => "default")
 
+  console.log(result);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+switcher(44);
 
 
 
