@@ -1,5 +1,16 @@
-"use strict";
-function switcher(hoge) {
+export const add = (num1, num2) => {
+    return num1 + num2;
+};
+export const minus = (num1, num2) => {
+    return num1 - num2;
+};
+/**
+ * Typescript用のswitch文
+ * @param {String} hoge number型の数字を渡す
+ * @returns {String} case文に応じて値をconsoleに出力
+ *
+*/
+export function switcher(hoge) {
     function when(value) {
         return {
             on(predicate, fn) {
