@@ -1,8 +1,12 @@
 npm startでサーバーが起動
 
 tsc app.ts -w　でルートにあるapp.tsのみ監視する
+→　この方法を使用すると、tsconfig.jsonの設定が無視される。
 
 npm run watchで自動で
 
 tsc -wでファイル変更の監視 全ファイルの監視になるので注意
 
+
+npx tsc -w
+を使うことで tsconfig.jsonの設定が反映される。
