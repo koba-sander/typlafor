@@ -1,5 +1,6 @@
 
-import { switcher, rand } from './common/common.js';
+import { rand } from './common/common.js';
+import { switcher, switcher1} from './common/switcher.js';
 import { getData, wait } from './common/async.js';
 import { back } from './common/generics.js';
 
@@ -12,7 +13,7 @@ const num = rand(55);
 
 if(typeof num !== "string"){
     console.log(num + "を渡した")
-    switcher(num);
+    switcher(num, "return");
 }
 
 

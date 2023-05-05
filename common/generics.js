@@ -1,3 +1,4 @@
+import { switcher } from "./common.js";
 /**
  * ジェネリクス
  * @param {T} arg
@@ -10,4 +11,7 @@
 */
 export function back(arg) {
     return arg;
+}
+export function back3(arg1, arg2, arg3) {
+    switcher();
 }
