@@ -1,18 +1,19 @@
 
-import { add, minus, switcher } from './common/common.js';
+import { switcher, rand } from './common/common.js';
 import { getData, wait } from './common/async.js';
+import { back } from './common/generics.js';
 
-// function window.TypeScriptStart2(){
 window.TypeScriptStart = () =>{
 //この中に処理を書くこと******************************************************************************************************************************************************************
 //**************************************************************************************************************************************************************************************
 
 
+const num = rand(55);
 
-
-switcher(44);
-
-
+if(typeof num !== "string"){
+    console.log(num + "を渡した")
+    switcher(num);
+}
 
 
 
