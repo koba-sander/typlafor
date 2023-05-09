@@ -1,12 +1,24 @@
-import { rand } from './common/common.js';
-import { switcher } from './common/switcher.js';
 window.TypeScriptStart = () => {
     //この中に処理を書くこと******************************************************************************************************************************************************************
     //**************************************************************************************************************************************************************************************
-    const num = rand(55);
-    if (typeof num !== "string") {
-        console.log(num + "を渡した");
-        switcher(num, "return");
+    async function fetchProducts() {
+        const response = await fetch('/products');
+        const productsData = await response.json();
+        return productsData;
     }
+    async function displayProducts() {
+        try {
+            const products = await fetchProducts();
+            products.forEach((product) => {
+                console.log(`Product: ${product.name}, price: $${product.price}`);
+            });
+        }
+        catch (error) {
+            console.error('Failed to display products:', error);
+        }
+    }
+    // Usage:
+    displayProducts();
     //ここまでに処理を書くこと------------------------------------------------------------------------------------------------------------------
 };
+export {};

@@ -9,12 +9,35 @@ window.TypeScriptStart = () =>{
 //**************************************************************************************************************************************************************************************
 
 
-const num = rand(55);
+interface Product {
+    id: number;
+    name: string;
+    price: number;
+  }
+  
+  async function fetchProducts(): Promise<Product[]> {
+    const response = await fetch('/products');
+    const productsData = await response.json();
+    return productsData;
+  }
+  
+  async function displayProducts() {
+    try {
+      const products = await fetchProducts();
+      products.forEach((product) => {
+        console.log(`Product: ${product.name}, price: $${product.price}`);
+      });
+    } catch (error) {
+      console.error('Failed to display products:', error);
+    }
+  }
+  
+  // Usage:
+  displayProducts();
+  
 
-if(typeof num !== "string"){
-    console.log(num + "を渡した")
-    switcher(num, "return");
-}
+
+
 
 
 
