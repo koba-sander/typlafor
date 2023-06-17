@@ -22,3 +22,13 @@ export function sum(a: number, b: number): number {
   return a + b;
 }
 
+
+/**
+ * 渡された引数のWebのリンクを開く
+ * @param {number} a, {number} number型の数字を渡す
+ * @returns {String} case文に応じて値をconsoleに出力
+ *
+*/
+export function openWebPg(url: string): void {
+  window.open(url, '_blank');
+}

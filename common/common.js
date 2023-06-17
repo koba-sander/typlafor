@@ -20,3 +20,12 @@ export function rand(num) {
 export function sum(a, b) {
     return a + b;
 }
+/**
+ * 渡された引数のWebのリンクを開く
+ * @param {number} a, {number} number型の数字を渡す
+ * @returns {String} case文に応じて値をconsoleに出力
+ *
+*/
+export function openWebPg(url) {
+    window.open(url, '_blank');
+}
