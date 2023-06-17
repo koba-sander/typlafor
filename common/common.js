@@ -1,3 +1,4 @@
+import { wait } from './async.js';
 /**
  * 数値を渡すをとランダムで値を返す
  * @param {String} hoge number型の数字を渡す
@@ -40,7 +41,9 @@ export function ScrollPage() {
         behavior: 'smooth',
     });
 }
-export function smoothScrollTo(end, duration) {
+export async function smoothScrollTo(end, duration) {
+    // 処理を5秒間遅らせる
+    await wait(5000);
     const start = window.scrollY || window.pageYOffset;
     const change = end - start;
     const startTime = performance.now();

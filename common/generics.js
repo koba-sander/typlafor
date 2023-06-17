@@ -11,6 +11,6 @@
 export function back(arg) {
     return arg;
 }
-// export function back3<T, U, P>(arg1: T, arg2: U, arg3: P): T | U | P {
-//     switcher()
-// }
+export function back3(arg1, arg2, arg3) {
+    // switcher()
+}

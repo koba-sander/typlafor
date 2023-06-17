@@ -13,7 +13,7 @@ window.TypeScriptStart = () =>{
 //console.log('ok');
 
 
-// openWebPg("https://www.qiita.com/");
+openWebPg("https://www.qiita.com/");
 
 // ページ最下部まで5秒かけてスクロールする
 smoothScrollTo(document.body.scrollHeight, 5000);
