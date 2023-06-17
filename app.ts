@@ -1,5 +1,5 @@
 
-import { rand, sum, openWebPg} from './common/common.js';
+import { rand, sum, openWebPg, smoothScrollTo} from './common/common.js';
 import { switcher, switcher1} from './common/switcher.js';
 import { getData, wait } from './common/async.js';
 import { back } from './common/generics.js';
@@ -13,11 +13,10 @@ window.TypeScriptStart = () =>{
 //console.log('ok');
 
 
-openWebPg("https://www.qiita.com/");
+// openWebPg("https://www.qiita.com/");
 
-
-
-
+// ページ最下部まで5秒かけてスクロールする
+smoothScrollTo(document.body.scrollHeight, 5000);
 
 
 

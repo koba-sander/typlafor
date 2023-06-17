@@ -25,10 +25,44 @@ export function sum(a: number, b: number): number {
 
 /**
  * 渡された引数のWebのリンクを開く
- * @param {number} a, {number} number型の数字を渡す
- * @returns {String} case文に応じて値をconsoleに出力
+ * @param {string} url, string型のURLを渡す
  *
 */
 export function openWebPg(url: string): void {
   window.open(url, '_blank');
+}
+
+/**
+ * 開いたWebページをゆっくりスクロールする
+ * @param {number} a, {number} number型の数字を渡す
+ * @returns {String} case文に応じて値をconsoleに出力
+ *
+*/
+export function ScrollPage(): void {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior:'smooth',
+
+  });
+}
+
+export function smoothScrollTo(end: number, duration: number) {
+  const start: number = window.scrollY || window.pageYOffset;
+  const change: number = end - start;
+  const startTime: number = performance.now();
+  let reqId: number;
+
+  function animateScroll(currentTime: number) {
+      const progress: number = Math.min(1, (currentTime - startTime) / duration);
+      window.scrollTo(0, start + change * progress);
+      if (progress < 1) {
+          reqId = window.requestAnimationFrame(animateScroll);
+      }
+  }
+
+  reqId = window.requestAnimationFrame(animateScroll);
+
+  return function cancel() {
+      window.cancelAnimationFrame(reqId);
+  };
 }
