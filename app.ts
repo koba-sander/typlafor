@@ -1,5 +1,5 @@
 
-import { rand } from './common/common.js';
+import { rand, sum} from './common/common.js';
 import { switcher, switcher1} from './common/switcher.js';
 import { getData, wait } from './common/async.js';
 import { back } from './common/generics.js';
@@ -7,39 +7,6 @@ import { back } from './common/generics.js';
 window.TypeScriptStart = () =>{
 //この中に処理を書くこと******************************************************************************************************************************************************************
 //**************************************************************************************************************************************************************************************
-
-
-interface Product {
-    id: number;
-    name: string;
-    price: number;
-  }
-  
-  async function fetchProducts(): Promise<Product[]> {
-    const response = await fetch('/products');
-    const productsData = await response.json();
-    return productsData;
-  }
-  
-  async function displayProducts() {
-    try {
-      const products = await fetchProducts();
-      products.forEach((product) => {
-        console.log(`Product: ${product.name}, price: $${product.price}`);
-      });
-    } catch (error) {
-      console.error('Failed to display products:', error);
-    }
-  }
-  
-  // Usage:
-  displayProducts();
-  
-
-
-
-
-
 
 
 

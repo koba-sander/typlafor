@@ -1,18 +1,3 @@
-
-
-
-
-
-
-
-/**
- * 数値を渡すをとランダムで値を返す
- * @param {String} hoge number型の数字を渡す
- * @returns {String} case文に応じて値をconsoleに出力
- *
-*/
-
-
 /**
  * 数値を渡すをとランダムで値を返す
  * @param {String} hoge number型の数字を渡す
@@ -26,3 +11,14 @@ export function rand(num: number | string): number | string{
   const randNum = Math.floor(num * Math.random())
   return randNum;
 }
+
+/**
+ * 数値を渡すをとランダムで値を返す
+ * @param {number} a, {number} number型の数字を渡す
+ * @returns {String} case文に応じて値をconsoleに出力
+ *
+*/
+export function sum(a: number, b: number): number {
+  return a + b;
+}
+
