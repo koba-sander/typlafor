@@ -36,3 +36,11 @@ $ git rm -r --cached node_modules
 --cachedオプションを付けることで、ローカルに node_modules を残したまま管理対象から外すことができます。
 
 あとは、node_modules が管理対象から外れたことで差分が発生しているのため、それをコミット&プッシュして完了です。
+
+
+
+nodeJsの実施方法
+
+cd node_test
+node windows.js
+
