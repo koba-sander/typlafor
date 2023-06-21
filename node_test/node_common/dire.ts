@@ -1,7 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-
+/**
+ * ディレクトリを開く関数
+ * @param {string} dirPath ファイルパスの引数を渡す
+ * 例：'C:\\Users\\koba\\Documents\\'など
+ * その分処理の時間を遅らせる。
+*/
 export async function openDir(dirPath: string) {
     try {
         const dir = await fs.promises.opendir(dirPath);
