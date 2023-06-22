@@ -18,4 +18,27 @@ export async function openDir(dirPath: string) {
     }
 }
 
+export function readTxt(filePath: string, rootPath: string){
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(`Failed to read file: ${err}`);
+            return;
+        }
+
+        // 改行で名前を分割します
+        const names = data.split('\r\n');
+        for (const name of names) {
+            // ディレクトリのフルパスを生成します
+            const dirPath = path.join(rootPath, name);
+
+            fs.mkdir(dirPath, { recursive: true }, (err) => {
+                if (err) {
+                    console.error(`Failed to create directory: ${err}`);
+                } else {
+                    console.log(`Directory created: ${dirPath}`);
+                }
+            });
+        }
+    });
+}
 

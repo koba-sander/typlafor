@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as path from 'path';
 /**
  * ディレクトリを開く関数
  * @param {string} dirPath ファイルパスの引数を渡す
@@ -15,4 +16,26 @@ export async function openDir(dirPath) {
     catch (err) {
         console.error(`Error opening directory: ${err}`);
     }
+}
+export function readTxt(filePath, rootPath) {
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(`Failed to read file: ${err}`);
+            return;
+        }
+        // 改行で名前を分割します
+        const names = data.split('\r\n');
+        for (const name of names) {
+            // ディレクトリのフルパスを生成します
+            const dirPath = path.join(rootPath, name);
+            fs.mkdir(dirPath, { recursive: true }, (err) => {
+                if (err) {
+                    console.error(`Failed to create directory: ${err}`);
+                }
+                else {
+                    console.log(`Directory created: ${dirPath}`);
+                }
+            });
+        }
+    });
 }
