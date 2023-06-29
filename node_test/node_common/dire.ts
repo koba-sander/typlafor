@@ -63,17 +63,18 @@ export async function createDirectoriesFromFile(filePath: string, rootPath: stri
 
 export async function renameFiles(directoryPath: string) {
     try {
-        console.log(readdir(directoryPath));
         const files = await readdir(directoryPath);
         let index = 1;
         for(const file of files) {
             const oldPath = path.join(directoryPath, file);
-            if(oldPath){
+            // 先頭1文字目が数字で、2文字目が'_'だった場合
+            // インデックスが既に振られているので、スキップ
+            if(isNaN(file[0]) === false && file[1] === '_') {
+                console.log(`既にインデックスが振られています: ${oldPath}`);
+            } else {
                 const newPath = path.join(directoryPath, `${index}_${file}`);
                 await rename(oldPath, newPath);
                 console.log(`インデックスを追加しました: ${oldPath} -> ${newPath}`);
-            } else {
-                console.log(`既にインデックスが振られています: ${oldPath}`)
             }
             index++;
         }
@@ -95,5 +96,32 @@ export async function createFiles(filePath: string, rootPath: string) {
         }
     } catch (err) {
         console.error(`ファイル作成に失敗しました: ${err}`);
+    }
+}
+
+
+export async function checkAndOpenFile(directoryPath: string, targetFileName: string) {
+    try {
+        const files = await readdir(directoryPath);
+
+        if (files.includes(targetFileName)) {
+            const targetFilePath = path.join(directoryPath, targetFileName);
+            const fileContent = await readFile(targetFilePath, 'utf8');
+            console.log(`File content of ${targetFileName}:`);
+            console.log(fileContent);
+        } else {
+            console.log(`${targetFileName} does not exist in ${directoryPath}. Exiting.`);
+            process.exit(0);
+        }
+    } catch (err) {
+        console.error(`Failed to read directory or file: ${err}`);
+    }
+}
+
+export async function openDir(directoryPath: string, target){
+    try {
+
+    } catch (err){
+        console.error(`開くのに失敗した: ${err}`)
     }
 }
