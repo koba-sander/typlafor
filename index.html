@@ -41,53 +41,27 @@
        </ul>
     </section>
     <section data-delighter="start:0.25">
-       <h2 data-delighter class="left">Usage</h2>
-       <p>1. Include the script</p>
+       <h2 data-delighter class="left">趣味</h2>
+       <p>1. 読書</p>
+       <pre> 小説は東野圭吾さん、自己啓発関連なら堀江貴文さん</pre>
+       <p>2. 海外旅行</p>
        <pre>
- &lt;script type="text/javascript" src="delighters.js"></pre>
-       <p>2. Add delighter attributes</p>
-       <pre>
- &lt;div class="foo" data-delighter></pre>
+          行ったとこ<br>
+          アメリカ、カナダ、イギリス、イタリア、フランス、ドイツ、台湾、タイ<br>
+          ベトナム、マレーシア、オーストラリア、香港
+       </pre>
        <p>
-          3. Style the delighter (or its children) using built-in classes
-          <code>.started</code> and <code>.ended</code>
+          3. ギター
        </p>
        <pre>
- /* when the library loads, each [data-delighter]
-    gets the .delighter class */
-
- .foo.delighter {
-    transition: all .3s ease-out;
-    transform: translateX(-100%);
-    opacity: 0;
- }
-
- /* the .started class is set when the top
-    of [data-delighter] is at 0.75 of the viewport
-    (where 0 is top and 1 is bottom) */
-
- .foo.delighter.started {
-    transform: none;
-    opacity: 1;
- }
-
- /* an extra .ended state is set when the bottom
-    of [data-delighter] is at 0.75 of the viewport
-    (where 0 is top and 1 is bottom) */
-
- .foo.delighter.started.ended {
-    border: solid red 10px;
- }</pre>
+         高校3年生よりやっていて、歴15年
+       </pre>
     </section>
     <section>
-       <h2 data-delighter class="right">How it works</h2>
+       <h2 data-delighter class="right">今後どんなエンジニアになりたいか</h2>
        <ul data-delighter>
-          <li>Delighters.js toggles classes when you scroll down. You do the rest!</li>
-          <li>Each delighter gets a <code>.started</code> class when its <b>top</b> raises above 75% of the browser's viewport height</li>
-          <li>When the <b>bottom</b> of the delighter is at 75%, an extra class <code>.ended</code> is added</li>
-          <li>You can change any of these like so: <code>data-delighter="start:0.5;end:0.95;</code></li>
-          <li>Remember: 0 = top, 1 = bottom</li>
-          <li>Values outside the viewport are allowed, such as <code>start:1.2;end:-0.3</code></li>
+          <li>バックエンド、フロントエンド、インフラなどバランスよく分かるエンジニアに</li>
+          <li>なりたい。</li>
        </ul>
     </section>
   </article>
