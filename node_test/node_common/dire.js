@@ -105,10 +105,3 @@ export async function checkAndOpenFile(directoryPath, targetFileName) {
         console.error(`Failed to read directory or file: ${err}`);
     }
 }
-export async function openDir(directoryPath, target) {
-    try {
-    }
-    catch (err) {
-        console.error(`開くのに失敗した: ${err}`);
-    }
-}
