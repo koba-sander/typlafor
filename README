@@ -32,6 +32,9 @@ $ touch .gitignore
 
 $ git rm -r --cached node_modules
 
+git rm -r --cached node_test
+
+
 !
 --cachedオプションを付けることで、ローカルに node_modules を残したまま管理対象から外すことができます。
 

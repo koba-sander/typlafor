@@ -1,2 +1,4 @@
 # bin フォルダは要らない
 node_modules/
+node_test/
+private/
