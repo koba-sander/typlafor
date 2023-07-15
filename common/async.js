@@ -17,3 +17,4 @@ export async function getData(url) {
     const data = await response.json();
     return data;
 }
+//# sourceMappingURL=async.js.map

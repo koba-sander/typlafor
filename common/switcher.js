@@ -60,3 +60,4 @@ export function switcher1(hoge) {
         .otherwise(() => "default");
     console.log(result);
 }
+//# sourceMappingURL=switcher.js.map

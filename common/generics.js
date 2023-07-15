@@ -14,3 +14,4 @@ export function back(arg) {
 export function back3(arg1, arg2, arg3) {
     // switcher()
 }
+//# sourceMappingURL=generics.js.map
